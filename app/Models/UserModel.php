@@ -34,4 +34,7 @@ class UserModel extends Model
             ->where(['username' => $username])
             ->first();
     }
+    public function getCount() {
+        return $this->db->table($this->table)->countAllResults();
+    } 
 }

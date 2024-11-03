@@ -1,0 +1,329 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #254336; /* Dark blue */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.sidebar h2 {
+    margin-top: 20px; /* Top margin */
+    font-size: 24px;
+    margin-bottom: 50px; /* Bottom margin */
+    color: #fff;
+}
+
+.sidebar a {
+    display: block;
+    color: #fff; /* White text */
+    text-decoration: none;
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #6B8A7A; /* Lighter blue */
+}
+
+.sidebar a.active {
+    background-color: #6B8A7A; /* Slightly lighter than dark blue */
+}
+
+/* Main content */
+.main-content {
+    margin-left: 250px; /* Leave space for sidebar */
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 30px; /* Left margin */
+}
+
+.header .title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header .user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header .user-menu img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Summary, Most Booked, Orders, Statistics, and Stock styling */
+.summary,
+.most-booked,
+.orders, 
+.statistics, 
+.stock,
+.products {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-left: 30px; /* Left margin */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.summary {
+    display: flex; /* Flexbox for item arrangement */
+    justify-content: space-between; /* Space between items */
+    margin: 20px 1px; /* Same margin as other sections */
+}
+
+.most-booked {
+    flex: 1; /* Make items flexible */
+    text-align: center; /* Center text */
+    padding: 15px; /* Inner padding */
+    border: 1px solid #e0e0e0; /* Border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.summary-item{
+    flex: 1; /* Make items flexible */
+    margin-right: 15px; /* Right margin */
+    text-align: center; /* Center text */
+    padding: 15px; /* Inner padding */
+    border: 1px solid #e0e0e0; /* Border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.summary-item:last-child,
+.most-booked:last-child {
+    margin-right: 0; /* Remove right margin for last item */
+}
+
+.most-booked h4 {
+    margin-bottom: 10px;
+    color: #254336; /* Dark blue */
+}
+
+.most-booked ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.most-booked li {
+    margin-bottom: 5px; /* Space between items */
+}
+
+/* Orders, Statistics, and Stock styling */
+.orders,
+.statistics,
+.stock,
+.products {
+    margin-top: 20px;
+}
+
+.orders h3,
+.statistics h3,
+.stock h3,
+.products h3 {
+    margin-bottom: 20px; /* Bottom margin for the title */
+    color: #254336; /* Dark blue */
+    font-size: 24px;
+}
+
+.orders table,
+.statistics table,
+.stock table,
+.products table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders table th,
+.orders table td,
+.statistics table th,
+.statistics table td,
+.stock table th,
+.stock table td,
+.products table th,
+.products table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders table th,
+.statistics table th,
+.stock table th,
+.products table th {
+    background-color: #254336; /* Dark blue */
+    color: #fff; /* White text */
+}
+
+.orders table tr:hover,
+.statistics table tr:hover,
+.stock table tr:hover,
+.products table tr:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination button {
+    background-color: #6B8A7A; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background-color: #6B8A7A; /* Darker blue on hover */
+}
+
+.pagination button.active {
+    background-color: #254336; /* Dark blue for active */
+}
+
+/* Search and filter styling */
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-left: 10px; /* Left margin */
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-filter button {
+    background-color: #6B8A7A; /* Blue */
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.search-filter button:hover {
+    background-color: #254336; /* Darker blue on hover */
+}
+
+/* Styling for statistics chart */
+canvas {
+    max-width: 100%; /* Responsive chart */
+    height: auto; /* Automatic height */
+}
+
+/* Form styling for adding new product */
+.products form {
+    margin-top: 20px; /* Space above the form */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.products form input {
+    padding: 10px;
+    margin-bottom: 10px; /* Space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.products form button {
+    background-color: #6B8A7A; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.products form button:hover {
+    background-color: #6B8A7A; /* Darker blue on hover */
+}
+
+/* Styling untuk welcome message */
+.welcome-message {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    margin: 20px 1px; /* Margin on all sides, similar to other sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-left: 30px; /* Left margin */    
+}
+
+.welcome-message h3 {
+    font-size: 1.5em; /* Ukuran font yang lebih besar */
+    color: #003366; /* Warna teks sesuai tema */
+    margin-bottom: 10px; /* Jarak bawah untuk heading */
+}
+
+.welcome-message p {
+    font-size: 1em; /* Ukuran font untuk paragraf */
+    color: #555; /* Warna teks abu-abu */
+}
+
+/* Styling untuk summary */
+.summary-item {
+    background-color: #ffffff; /* Background putih */
+    border: 1px solid #e0e0e0; /* Garis border abu-abu */
+    border-radius: 8px; /* Sudut melengkung */
+    padding: 15px; /* Padding di dalam elemen */
+    flex: 1; /* Mengatur item agar fleksibel */
+    margin-right: 15px; /* Jarak kanan antar item */
+    text-align: center; /* Rata tengah teks */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+}
+
+.summary-item:last-child {
+    margin-right: 0; /* Hapus margin kanan untuk item terakhir */
+}
+
+.summary-item h4 {
+    font-size: 1.2em; /* Ukuran font untuk judul */
+    color: #254336; /* Warna teks sesuai tema */
+    margin-bottom: 5px; /* Jarak bawah untuk judul */
+}
+
+.summary-item p {
+    font-size: 1.5em; /* Ukuran font untuk angka */
+    color: #6B8A7A; /* Warna untuk angka */
+    font-weight: bold; /* Membuat angka lebih tebal */
+}
+
+.chart-margin {
+    margin-top: 50px; /* Adjust the value as needed */
+}
+
+

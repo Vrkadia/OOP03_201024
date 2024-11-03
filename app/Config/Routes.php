@@ -24,3 +24,6 @@ $routes->get('/rent','CatalogController::viewRent');
 $routes->post('/rent','CatalogController::saveRent');
 $routes->get('/cart','CatalogController::viewCart');
 $routes->get('/history','CatalogController::viewHistory');
+
+//dashboard
+$routes->get('/dashboard','DashboardController::viewDashboard');

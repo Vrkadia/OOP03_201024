@@ -44,4 +44,7 @@ class ItemModel extends Model
     {
         return $this->insert($data);
     }
+    public function getCount() {
+        return $this->db->table($this->table)->countAllResults();
+    }    
 }

@@ -44,4 +44,45 @@ class OrderModel extends Model
     {
         return $this->insert($data);
     }
+    public function getCount() {
+        return $this->db->table($this->table)->countAllResults();
+    }
+    public function getMostOrderedItem() {
+        $query = $this->asArray()
+                  ->select('alat, COUNT(*) as order_count')
+                  ->groupBy('alat')
+                  ->orderBy('order_count', 'DESC')
+                  ->limit(1)
+                  ->get(); // Executes the query
+    return $query->getRowArray();
+    }
+    public function countOrdersLastWeek() {
+        $query = $this->asArray()
+                  ->select('COUNT(*) as week_count')
+                  ->where('schedule_date_time >=', 'NOW() - INTERVAL 7 DAY', false)
+                  ->get(); // Executes the query
+    return $query->getRowArray();
+    }
+    public function countOrdersLastMonth() {
+        $query = $this->asArray()
+                  ->select('COUNT(*) as month_count')
+                  ->where('schedule_date_time >=', 'NOW() - INTERVAL 1 MONTH', false)
+                  ->get(); // Executes the query
+    return $query->getRowArray();
+    }
+    public function countOrdersLastYear() {
+        $query = $this->asArray()
+                  ->select('COUNT(*) as year_count')
+                  ->where('schedule_date_time >=', 'NOW() - INTERVAL 1 YEAR', false)
+                  ->get(); // Executes the query
+    return $query->getRowArray();
+    }
+    public function countOrdersGroupedByDate() {
+        $query = $this->asArray()
+                  ->select('DATE(schedule_date_time) as date, COUNT(*) as count')
+                  ->groupBy("DATE(schedule_date_time)")
+                  ->orderBy("date", "ASC")
+                  ->get();
+    return $query->getRowArray();
+    }
 }
