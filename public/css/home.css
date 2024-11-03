@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* start of navigasi-bar */
+#Home {
+    width: 100%;
+    height: 78px;
+    background-color: #254336;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+/* left-nav */
+.left-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul{
+    display: flex;
+}
+
+.nav-bar li a {
+    display: flex;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    padding: 10px 25px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-bar li a:hover {
+    background-color: #6B8A7A; /* Background color */
+}
+ /* end of left-nav */
+
+ /* right-nav */
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.login-button {
+    background-color: transparent; /* Hapus warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Hapus border */
+    cursor: pointer;
+    justify-content: right;
+    align-content: center;
+    font-weight:700;
+    font-size: medium;
+}
+
+.login-button:hover {
+    color: black; /* Warna teks saat dihover */
+}
+
+.loc-button2 {
+    background-color: transparent; /* Hapus warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Hapus border */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    font-size: small;
+}
+
+.loc-button2:hover {
+    color: black; /* Warna teks saat dihover */
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 1200px;
+}
+
+.user-menu2 {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu2 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+/* end of right-nav */
+
+/* end of navigasi-bar */
+
+
+/* section sectionvid */
+#sectionvid {
+    background-color: #6B8A7A;
+}
+
+
+.vidio {
+    width: 1600px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6B8A7A; /* Background color */
+}
+
+.vidio video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Membuat video terisi penuh container */
+    padding-bottom: 80px;
+}
+
+/* /* end of section vid */
+
+
+/* section sectionProduck */
+/* General Styles */
+/* Section Styles */
+#Section-Produck {
+    background-color: #254336;
+    padding: 40px 0;
+}
+
+.judul-produck {
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+
+/* end of sectionProduck */
+#sectionProduck {
+    background-color: #254336; /* Warna latar belakang */
+    padding: 40px 20px; /* Padding atas-bawah dan kiri-kanan */
+
+    width: 100%; /* Lebar penuh */
+    margin: 0; /* Menghilangkan margin */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Bayangan */
+}
+
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.produk-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Jarak antar item */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.produk-item {
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    width: 280px; /* Lebar tetap untuk lebih fleksibel */
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.produk-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.produk-item:hover img {
+    transform: scale(1.1); /* Zoom saat hover */
+}
+
+.produk-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+.rating {
+    color: #f39c12;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #254336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #6B8A7A;
+}
+
+@media (max-width: 768px) {
+    .produk-item {
+        width: 100%; /* Lebar penuh di perangkat kecil */
+    }
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 1.5em; /* Ukuran bintang */
+    color: #bdc3c7; /* Warna bintang tidak terpilih */
+    transition: color 0.3s;
+}
+
+.star:hover,
+.star:hover ~ .star {
+    color: #f39c12; /* Warna saat hover */
+}
+
+.star.selected {
+    color: #f39c12; /* Warna bintang terpilih */
+}
+
+.footerT2 {
+    margin-top: 30px;
+    font-size: medium; /* Maintain consistent font size */
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    margin-right: 80px;
+}
+ 
+.footerT2 a {
+    color: white;
+    text-decoration: none; /* Menghilangkan garis bawah default */
+}
+
+.footerT2 a:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat di-hover */
+}
+
+/* start aboutme */
+#AboutMe {
+    justify-content: center;
+    align-items: center;
+    height: 1100px;
+    background-color: #254336;
+}
+
+.AboutMeImg {
+    width: 75%;  /* Mengatur lebar elemen menjadi 75% */
+    height: auto; /* Mengatur tinggi elemen otomatis agar sesuai dengan proporsi gambar */
+    margin: auto;
+}
+
+.AboutMeImg img {
+    width: 100%; /* Mengatur lebar gambar agar 100% dari lebar elemen AboutMeImg */
+    height: auto; /* Mengatur tinggi gambar otomatis agar sesuai dengan proporsi asli */
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+
+.AboutMeT {
+    color: whitesmoke;
+    padding-left: 285px;
+    font-size: larger;
+}
+/* end of about me */
+
+/* start footer */
+footer {
+    background-color: #6B8A7A; /* Warna latar belakang hitam */
+    color: #fff; /* Warna teks putih */
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    max-width: 600px; /* Sesuaikan lebar sesuai kebutuhan */
+    font-size: small;
+}
+
+.footer-left h4 {
+    margin-bottom: 10px;
+}
+
+.footer-left ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-left li {
+    margin: 5px 0; /* Jarak antara item ditambah */
+}
+
+.footer-right {
+    margin-right: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-right a {
+    margin-left: 17px;
+    font-size: 24px; /* Ukuran ikon */
+    color: #fff; /* Warna ikon */
+}
+
+.footerT {
+    margin-top: 20px;
+    font-size: small; /* Maintain consistent font size */
+}
+
+.scroll-to-top {
+    display: none; /* Keep hidden until needed */
+    position: fixed;
+    bottom: 20px; /* Reduce bottom spacing */
+    right: 20px; /* Reduce right spacing */
+    z-index: 1000;
+    background-color: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add slight shadow for depth */
+    margin-right: 40px;
+    margin-bottom: 70px;
+}
+
+.scroll-to-top:hover {
+    background-color: whitesmoke; /* Maintain hover effect */
+}
+
+.gear-list1 {
+    color: whitesmoke;
+}
+
+.gear-list1:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat tautan dihover */
+}
+    
+/* end of footer */
+
+/* page BMWF82 */
+
+/* section 2 */
+#BMW {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-bottom: 100px;
+}
+
+.slider {
+    position: relative;
+    width: 80vw; /* Lebar slider menjadi 80% lebar viewport */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 90vw; /* Lebar slide menjadi 80% lebar viewport */
+    position: relative;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%; /* Lebar gambar diatur 100% lebar slide */
+    height: auto;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.navigation .prev, .navigation .next {
+    pointer-events: auto;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    padding: 10px;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #000;
+}
+
+
+
+
+/* page BMWF82 */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #141414;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 832px;
+}
+
+
+
+h2 {
+    margin-left: 172px;
+    color: whitesmoke;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr {
+    background-color: #f1f1f1;
+}
+
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.edit-button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #4CAF50;
+}
+
+.video-section {
+    margin-top: 20px;
+}
+
+
+
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.back-left {
+    color: white;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+
+.panah {
+    padding-top: 12px;
+}
+
+
+

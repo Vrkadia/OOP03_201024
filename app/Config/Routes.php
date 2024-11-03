@@ -9,7 +9,11 @@ use CodeIgniter\Router\RouteCollection;
 
  //Tempat rute auth nya
 $routes->get('/login','AuthController::viewLogin');
+$routes->post('/login', 'AuthController::checkLogin');
+$routes->get('/logout', 'AuthController::logout');
 $routes->get('/register','AuthController::viewRegister');
+$routes->post('/register','AuthController::save');
+
 
 //Homepage dkk
 $routes->get('/', 'HomeController::index');

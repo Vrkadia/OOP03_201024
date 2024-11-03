@@ -5,28 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>BYD</title>
-    <style>
-        /* Gaya untuk bagian ketentuan dan prosedur rental */
-        .terms-section {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-        .terms-section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .terms-section ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .terms-section li {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/rentform.css">
+    <title>Rent Form</title>
 </head>
 <body>
     <div class="login-section">

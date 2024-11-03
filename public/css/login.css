@@ -1,0 +1,260 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+.back-left {
+    color: white;
+}
+
+.login-section {
+    width: 25%;
+    background: #254336;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.Logintext {
+    color: whitesmoke;
+}
+
+.textlogin1 {
+    font-size: xx-large;
+    color: whitesmoke;
+    margin-bottom: 0; /* Menghilangkan margin bawah pada textlogin1 */
+}
+
+.here {
+    color: gray;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.textlogin2 {
+    color: whitesmoke;
+    font-size: small;
+    margin-bottom: 35px;
+}
+
+.form {
+    align-items: center;
+}
+
+
+.textBYD1 {
+    font-size: xx-large;
+    color: whitesmoke;
+    margin-bottom: 35px; 
+}
+
+.textBYD2 {
+    color: whitesmoke;
+    font-size:smaller;
+    margin-top: 30px;
+}
+
+/* Menghilangkan latar belakang dari input datetime-local */
+input[type="datetime-local"] {
+    background-color: whitesmoke;
+    padding: 5px; /* Atur padding sesuai kebutuhan */
+    /* Tambahkan gaya lainnya sesuai kebutuhan */
+    color:whitesmoke;
+    margin-bottom: 20px;
+    color: black;
+}
+
+
+.separator {
+    color: whitesmoke;
+    font-size: large;
+    margin-top: 30px;
+}
+
+
+.login-section input[type="text"],
+.login-section input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    height: 30px;
+}
+
+#email {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    height: 30px;
+}
+
+.optioncar {
+    width: 99.5%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    height: 50px;
+}
+
+.BYDtime {
+    width: 96.5%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    height: 40px;
+}
+
+.login-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.signintext {
+    margin-top: 20px;
+}
+
+.login-section button:hover {
+    background-color: #005bb5;
+}
+.login-section .google-login {
+    background-color: #6B8A7A;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-weight:500;
+
+}
+.login-section .google-login:hover {
+    background-color: black;
+    color: whitesmoke;
+    box-shadow: 0 0 0 2px white;
+}
+
+
+.login-section .google-login {
+    background-color: #6B8A7A;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    font-weight:500;
+}
+.login-section .google-login:hover {
+    background-color:#254336;
+    color: whitesmoke;
+    box-shadow: 0 0 0 2px white;
+}
+
+
+.login-section .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.login-section .links a {
+    text-decoration: none;
+    color: #0078d7;
+}
+.login-section .links a:hover {
+    color: #005bb5;
+}
+.video-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.contact-info-container {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-info {
+    color: whitesmoke;
+}
+
+.contact-info:hover {
+    color: #0078d7;
+}
+
+.contact-info2 {
+    color: whitesmoke;
+}
+
+.contact-info2:hover {
+    color: yellow;
+}
+
+.contact-info3 a {
+    color: whitesmoke;
+}
+.contact-info3 a:hover {
+    color: green;
+}
+
+/*  */
+/* Add your CSS styles here */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #6B8A7A;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.role-selector i {
+    color: white; /* Change this to the desired color */
+}

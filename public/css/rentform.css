@@ -1,0 +1,18 @@
+.terms-section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+.terms-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.terms-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.terms-section li {
+    margin-bottom: 10px;
+}
