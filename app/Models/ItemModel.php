@@ -10,7 +10,7 @@ class ItemModel extends Model
     protected $db;
     protected $table = 'alat_kemah';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'description', 'deadline', 'status', 'userId'];
+    protected $allowedFields = ['id', 'name', 'total_stock', 'price', 'availability', 'description', 'specifications', 'image'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -27,7 +27,13 @@ class ItemModel extends Model
     public function getItemId($item)
     {
         return $this->asArray()
-            ->where(['title' => $item])
+            ->where(['name' => $item])
+            ->first();
+    }
+    public function getItemAvailability($item)
+    {
+        return $this->asArray()
+            ->where(['name' => $item])
             ->first();
     }
     public function getAllItems(){

@@ -13,9 +13,7 @@ class HomeController extends BaseController
         $this->itemModel = new ItemModel($db);
     }
     public function index() {
-        // if (!session()->has('isLoggedIn')) {
-        //     return redirect()->to('/login');
-        // }
+        
         $username = session()->get('username');
 
         $items = $this->itemModel->getAllItems();

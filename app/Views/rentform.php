@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/rentform.css">
     <title>Rent Form</title>
 </head>
 <body>
     <div class="login-section">
-        <a href="index.php" class="back-left"><i class="fas fa-arrow-left"></i></a>
+        <a href="/" class="back-left"><i class="fas fa-arrow-left"></i></a>
         <p class="textBYD1">Ayo Sewa Alat Kemah!</p>
 
-        <form class="form" id="scheduleForm" action="BYD.php" method="POST">
-            <select class="optioncar" id="alat" name="i_alat" required>
-                <option value="" disabled selected>Pilih alat Anda</option>
-                <?php foreach ($kemah as $alat): ?>
-                    <option value="<?= htmlspecialchars($alat) ?>" <?= $availability[$alat] >= $total_stock[$alat] ? 'disabled' : '' ?>>
-                        <?= htmlspecialchars($alat) ?> <?= $availability[$alat] >= $total_stock[$alat] ? '<i>alat sudah habis</i>' : '' ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+        <form class="form" id="scheduleForm" action="<?= base_url('/rent') ?>" method="POST">
+        <select class="optioncar" id="alat" name="i_alat" required>
+            <option value="" disabled selected>Pilih alat Anda</option>
+            <?php foreach ($items as $item): ?>
+                <option value="<?= htmlspecialchars($item['id']) ?>">>
+                    <?= htmlspecialchars($item['name']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
 
             <select class="optioncar" id="rentalDuration" name="i_rentalDuration" required>
                 <option value="" disabled selected>Pilih durasi sewa</option>
@@ -41,7 +41,7 @@
 
             <input type="datetime-local" id="scheduleDateTime" name="i_scheduleDateTime" required min="<?= date('Y-m-d\TH:i') ?>">
 
-            <i id="message" style="display: <?= $schedule_message ? 'block' : 'none'; ?>; color: red;"><?= htmlspecialchars($schedule_message) ?></i>
+            
 
             <br><br>
             <button id="schedule-here" type="submit" class="google-login">Next</button>
@@ -67,8 +67,8 @@
 
     <div class="video-section">
         <video width="2560" height="800" autoplay loop muted>
-            <source src="static/footageLatar1.mov" type="video/quicktime">
-            <source src="static/footageLatar1.mp4" type="video/mp4">
+            <source src="assets/videos/footageLatar1.mov" type="video/quicktime">
+            <source src="assets/videos/footageLatar1.mp4" type="video/mp4">
         </video>
     </div>
 
