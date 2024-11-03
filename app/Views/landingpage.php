@@ -44,7 +44,7 @@
                                 </li>
                             <?php else: ?>
                                 <li>
-                                    <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="text-decoration: none;">LOGOUT</a>
+                                    <a href="/logout" style="text-decoration: none;">LOGOUT</a>
                                     <form id="/logout-form" method="POST" style="display: none; color: whitesmoke;">
                                         <input type="hidden" name="logout" value="1"> <!-- Form untuk logout -->
                                     </form>
