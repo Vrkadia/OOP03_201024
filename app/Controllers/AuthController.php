@@ -22,13 +22,17 @@ class AuthController extends BaseController
     public function save()
     {
         $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
         $role = $this->request->getPost('role');
+        $phone = $this->request->getPost('phone_number');
 
         $data = [
             'email'    => $email,
+            'username' => $username,
             'password' => password_hash($password, PASSWORD_DEFAULT),
-            'role'     => 'user'
+            'role'     => 'user',
+            'phone_number' => $phone
         ];
 
         $this->userModel->save($data);
@@ -51,6 +55,7 @@ class AuthController extends BaseController
                     'userId'   => $user['id'],
                     'email'    => $user['email'],
                     'username' => $user['username'],
+                    'phone_number' => $user['phone_number'],
                     'role'     => $user['role'],
                     'isLoggedIn' => true,
                 ];

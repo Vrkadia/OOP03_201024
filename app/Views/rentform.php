@@ -17,11 +17,12 @@
         <select class="optioncar" id="alat" name="i_alat" required>
             <option value="" disabled selected>Pilih alat Anda</option>
             <?php foreach ($items as $item): ?>
-                <option value="<?= htmlspecialchars($item['id']) ?>">>
-                    <?= htmlspecialchars($item['name']) ?>
+                <option value="<?= htmlspecialchars($item['alat']) ?>">
+                    <?= htmlspecialchars($item['alat']) ?>
                 </option>
             <?php endforeach; ?>
         </select>
+
 
             <select class="optioncar" id="rentalDuration" name="i_rentalDuration" required>
                 <option value="" disabled selected>Pilih durasi sewa</option>

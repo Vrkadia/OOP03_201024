@@ -21,5 +21,6 @@ $routes->get('/', 'HomeController::index');
 //Item katalog dan smua barang
 $routes->get('/catalog','CatalogController::viewCatalog');
 $routes->get('/rent','CatalogController::viewRent');
+$routes->post('/rent','CatalogController::saveRent');
 $routes->get('/cart','CatalogController::viewCart');
 $routes->get('/history','CatalogController::viewHistory');
