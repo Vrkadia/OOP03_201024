@@ -23,7 +23,7 @@
             <nav class="nav-bar">
                 <ul>
                     <li>
-                        <a href="index.php" class="active">HOME</a> <!-- Tautan ke halaman utama -->
+                        <a href="/" class="active">HOME</a> <!-- Tautan ke halaman utama -->
                     </li>
                     <li>
                         <a href="/rent">RENT YOUR GEAR</a> <!-- Tautan untuk menyewa gear -->
@@ -34,10 +34,10 @@
                     <li>
                         <?php if (!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] !== true): ?>
                             <li>
-                                <a href="login.php">LOGIN</a> <!-- Tautan untuk login jika pengguna belum login -->
+                                <a href="/login">LOGIN</a> <!-- Tautan untuk login jika pengguna belum login -->
                             </li>
                             <li>
-                                <a href="register.php">REGISTER</a> <!-- Tautan untuk registrasi -->
+                                <a href="/register">REGISTER</a> <!-- Tautan untuk registrasi -->
                             </li>
                             <?php else: ?>
                                 <li>

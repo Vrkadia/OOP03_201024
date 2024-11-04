@@ -24,7 +24,7 @@
 <body>
     <div class="login-section">
         <!-- Tautan untuk kembali ke halaman utama -->
-        <a href="/index" class="back-left"><i class="fas fa-arrow-left"></i></a>
+        <a href="/" class="back-left"><i class="fas fa-arrow-left"></i></a>
         <p class="textlogin1">Shadow Wheels <br>Pendaftaran</p>
 
         <form class="form" action="<?php echo base_url('/register'); ?>" method="POST">

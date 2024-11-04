@@ -80,7 +80,7 @@
             </div>
         </center>
         <div class="footerT2">
-            <a href="catalog.php"><p>Lihat Selengkapnya</p></a> <!-- Tautan ke halaman katalog -->
+            <a href=/"catalog"><p>Lihat Selengkapnya</p></a> <!-- Tautan ke halaman katalog -->
         </div>
         <div class="produk-list">
             <?php if (!empty($items)): ?>

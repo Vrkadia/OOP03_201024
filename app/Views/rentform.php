@@ -12,6 +12,9 @@
     <div class="login-section">
         <a href="/" class="back-left"><i class="fas fa-arrow-left"></i></a>
         <p class="textBYD1">Ayo Sewa Alat Kemah!</p>
+        <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+        <?php endif; ?>
 
         <form class="form" id="scheduleForm" action="<?= base_url('/rent') ?>" method="POST">
         <select class="optioncar" id="alat" name="i_alat" required>
@@ -50,6 +53,8 @@
                 <button type="button" class="google-login">Tampilkan Keranjang</button>
             </a>
         </form>
+
+
 
         <div class="terms-section">
             <h2>Ketentuan dan Prosedur Rental:</h2>

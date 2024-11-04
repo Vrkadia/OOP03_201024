@@ -37,6 +37,7 @@ class CatalogController extends BaseController
     public function saveRent()
     {
         $username = session()->get('username');
+        if (!$username) return redirect()->back()->with('error', 'Silahkan Login dulu');
         $phone = session()->get('phone_number');
         $alat = $this->request->getPost('i_alat');
         $durasi = $this->request->getPost('i_rentalDuration');
