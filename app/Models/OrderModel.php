@@ -78,11 +78,12 @@ class OrderModel extends Model
     return $query->getRowArray();
     }
     public function countOrdersGroupedByDate() {
-        $query = $this->asArray()
+    $query = $this->asArray()
                   ->select('DATE(schedule_date_time) as date, COUNT(*) as count')
                   ->groupBy("DATE(schedule_date_time)")
                   ->orderBy("date", "ASC")
-                  ->get();
-    return $query->getRowArray();
+                  ->findAll();  // This is assuming that findAll() retrieves all rows; the actual method name might vary based on the framework.
+
+    return $query;
     }
 }

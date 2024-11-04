@@ -21,12 +21,14 @@ class AuthController extends BaseController
     }
     public function save()
     {
+        //Mengambil data dari form
         $email = $this->request->getPost('email');
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
         $role = $this->request->getPost('role');
         $phone = $this->request->getPost('phone_number');
 
+        //Memasukkan semua data kedalam satu variable
         $data = [
             'email'    => $email,
             'username' => $username,

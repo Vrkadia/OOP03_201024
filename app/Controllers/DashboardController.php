@@ -58,4 +58,63 @@ class DashboardController extends BaseController
         ];
         return view('dashboard', $data);
     }
+    public function deletePesanan(){
+        $order_id = $this->request->getPost('order_id');
+        $this->orderModel->delete($order_id);
+
+        return redirect()->to('/dashboard')->with('success', 'Penghapusan berhasil.');
+    }
+    public function deleteItem(){
+        $item_id = $this->request->getPost('product_id');
+        $this->itemModel->deleteItem($item_id);
+
+        return redirect()->to('/dashboard')->with('success', 'Penghapusan berhasil.');
+    }
+    public function addItem(){
+        //Mengambil data dari form
+        $id = $this->itemModel->getLastItemId();
+        $name = $this->request->getPost('name');
+        $total_stock = $this->request->getPost('total_stock');
+        $price = $this->request->getPost('price');
+        $description = $this->request->getPost('description');
+        $specifications = $this->request->getPost('specifications');
+        $target_dir = "assets/images/"; // Direktori untuk menyimpan gambar
+        $target_file = $target_dir . basename($_FILES["image"]["name"]); // Path lengkap untuk gambar
+        $uploadOk = 1; // Indikator untuk status upload
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); // Mendapatkan tipe file gambar
+
+        // Cek apakah gambar adalah gambar sebenarnya
+        $check = getimagesize($_FILES["image"]["tmp_name"]); // Memeriksa apakah file adalah gambar
+        if ($check === false) {
+            echo "File bukan gambar."; // Pesan jika bukan gambar
+            $uploadOk = 0; // Menandakan upload gagal
+        }
+
+        // Cek ukuran file
+        if ($_FILES["image"]["size"] > 5000000) { // Maksimal ukuran 5 MB
+            echo "Maaf, file terlalu besar."; // Pesan jika ukuran terlalu besar
+            $uploadOk = 0; // Menandakan upload gagal
+        }
+
+        // Izinkan format file tertentu
+        if (!in_array($imageFileType, ['jpg', 'png', 'jpeg', 'gif'])) {
+            echo "Maaf, hanya file JPG, JPEG, PNG & GIF yang diperbolehkan."; // Pesan jika format tidak sesuai
+            $uploadOk = 0; // Menandakan upload gagal
+        }
+        //Memasukkan semua data kedalam satu variable
+        $data = [
+            'id' => $id,
+            'name'    => $name,
+            'total_stock' => $total_stock,
+            'price' => $price,
+            'description' => $description,
+            'specifications'     => $specifications,
+            'image' => $target_file
+        ];
+
+        $this->itemModel->save($data);
+
+        return redirect()->to('/dashboard')->with('success', 'Register barang berhasil.');
+    }
+    
 }

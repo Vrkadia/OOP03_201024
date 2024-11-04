@@ -174,7 +174,7 @@
                         <td><?= htmlspecialchars($order['payment_method']) ?></td>
                         <td><?= htmlspecialchars($order['phone_number']) ?></td>
                         <td>
-                            <form method="POST" action="order_process.php" style="display:inline;">
+                            <form method="POST" action="/order_process" style="display:inline;">
                                 <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
                                 <button type="submit" name="delete" onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')">Hapus</button>
                             </form>
@@ -301,7 +301,7 @@
                         <td><?= htmlspecialchars($alat['specifications']) ?></td>
                         <td><img src="<?= htmlspecialchars($alat['image']) ?>" alt="<?= htmlspecialchars($alat['name']) ?>" style="width: 100px;"></td>
                         <td>
-                            <form method="POST" action="product_process.php" style="display:inline;">
+                            <form method="POST" action="/product_process" style="display:inline;">
                                 <input type="hidden" name="product_id" value="<?= $alat['id'] ?>">
                                 <button type="submit" name="delete" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Hapus</button>
                             </form>
@@ -312,7 +312,7 @@
         </table>
 
         <h4>Tambahkan Produk Baru</h4>
-        <form method="POST" action="product_process.php" enctype="multipart/form-data">
+        <form method="POST" action="/product_process/add" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Nama Produk" required>
             <input type="number" name="total_stock" placeholder="Total Stok" required>
             <input type="text" name="price" placeholder="Harga" required>

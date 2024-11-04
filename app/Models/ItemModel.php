@@ -9,11 +9,9 @@ class ItemModel extends Model
 {
     protected $db;
     protected $table = 'alat_kemah';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['id', 'name', 'total_stock', 'price', 'availability', 'description', 'specifications', 'image'];
-    protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    // protected $primaryKey = 'id';
+    protected $allowedFields = ['name', 'total_stock', 'price', 'availability', 'description', 'specifications', 'image'];
+    protected $useTimestamps = false;
     public function __construct(ConnectionInterface &$db) {
         $this->db =& $db;
     }
@@ -45,6 +43,15 @@ class ItemModel extends Model
         return $this->insert($data);
     }
     public function getCount() {
-        return $this->db->table($this->table)->countAllResults();
-    }    
+        return $this->select('*')->table($this->table)->countAllResults();
+    }  
+    public function deleteItem($item_id){
+        return $this ->where(['id'=> $item_id])->delete();
+    }  
+    public function getLastItemId() {
+        $query = $this->selectMax('id', 'last_id')
+                      ->get();
+        return $query->getRow()->last_id;
+    }
+    //DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 }

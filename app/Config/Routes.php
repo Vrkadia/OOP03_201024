@@ -27,3 +27,9 @@ $routes->get('/history','CatalogController::viewHistory');
 
 //dashboard
 $routes->get('/dashboard','DashboardController::viewDashboard');
+$routes->post('/order_process','DashboardController::deletePesanan');
+$routes->post('/product_process','DashboardController::deleteitem');
+$routes->post('/product_process/add','DashboardController::addItem');
+
+///product_process/add
+
