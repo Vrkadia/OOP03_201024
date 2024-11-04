@@ -70,51 +70,63 @@ class DashboardController extends BaseController
 
         return redirect()->to('/dashboard')->with('success', 'Penghapusan berhasil.');
     }
-    public function addItem(){
-        //Mengambil data dari form
-        $id = $this->itemModel->getLastItemId();
+    public function addItem()
+    {
+        // Fetch form data
         $name = $this->request->getPost('name');
         $total_stock = $this->request->getPost('total_stock');
         $price = $this->request->getPost('price');
         $description = $this->request->getPost('description');
         $specifications = $this->request->getPost('specifications');
-        $target_dir = "assets/images/"; // Direktori untuk menyimpan gambar
-        $target_file = $target_dir . basename($_FILES["image"]["name"]); // Path lengkap untuk gambar
-        $uploadOk = 1; // Indikator untuk status upload
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); // Mendapatkan tipe file gambar
+        $target_dir = "assets/images/"; // Directory to save the image
+        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        // Cek apakah gambar adalah gambar sebenarnya
-        $check = getimagesize($_FILES["image"]["tmp_name"]); // Memeriksa apakah file adalah gambar
+        // Image validation
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check === false) {
-            echo "File bukan gambar."; // Pesan jika bukan gambar
-            $uploadOk = 0; // Menandakan upload gagal
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+        if ($_FILES["image"]["size"] > 5000000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+        if (!in_array($imageFileType, ['jpg', 'jpeg', 'png', 'gif'])) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
         }
 
-        // Cek ukuran file
-        if ($_FILES["image"]["size"] > 5000000) { // Maksimal ukuran 5 MB
-            echo "Maaf, file terlalu besar."; // Pesan jika ukuran terlalu besar
-            $uploadOk = 0; // Menandakan upload gagal
+        // File upload and database save
+        if ($uploadOk === 1) {
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                // Prepare data for database
+                $data = [
+                    'name' => $name,
+                    'total_stock' => $total_stock,
+                    'price' => $price,
+                    'description' => $description,
+                    'specifications' => $specifications,
+                    'image' => $target_file
+                ];
+
+                // Try to save data
+                if ($this->itemModel->save($data)) {
+                    return redirect()->to('/dashboard')->with('success', 'Product added successfully.');
+                } else {
+                    // Log or display error if save fails
+                    log_message('error', 'Database save failed: ' . json_encode($data));
+                    echo "Database save failed.";
+                }
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        } else {
+            echo "Sorry, your file was not uploaded due to validation errors.";
         }
-
-        // Izinkan format file tertentu
-        if (!in_array($imageFileType, ['jpg', 'png', 'jpeg', 'gif'])) {
-            echo "Maaf, hanya file JPG, JPEG, PNG & GIF yang diperbolehkan."; // Pesan jika format tidak sesuai
-            $uploadOk = 0; // Menandakan upload gagal
-        }
-        //Memasukkan semua data kedalam satu variable
-        $data = [
-            'id' => $id,
-            'name'    => $name,
-            'total_stock' => $total_stock,
-            'price' => $price,
-            'description' => $description,
-            'specifications'     => $specifications,
-            'image' => $target_file
-        ];
-
-        $this->itemModel->save($data);
-
-        return redirect()->to('/dashboard')->with('success', 'Register barang berhasil.');
     }
+
+
     
 }

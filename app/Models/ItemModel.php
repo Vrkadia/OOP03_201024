@@ -43,7 +43,7 @@ class ItemModel extends Model
         return $this->insert($data);
     }
     public function getCount() {
-        return $this->select('*')->table($this->table)->countAllResults();
+        return $this->countAll();
     }  
     public function deleteItem($item_id){
         return $this ->where(['id'=> $item_id])->delete();
