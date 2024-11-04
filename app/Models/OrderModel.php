@@ -86,4 +86,10 @@ class OrderModel extends Model
 
     return $query;
     }
+    public function getAllOrderFromUser($username){
+        return $this->asArray()
+            ->where(['username' => $username])
+            ->orderBy('id', 'DESC')
+            ->findAll();
+    }
 }

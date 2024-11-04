@@ -28,7 +28,10 @@ class CatalogController extends BaseController
     }
     public function viewCart(): string
     {
-        return view('cart');
+        $username = session()->get('username');
+        $orders = $this->orderModel->getAllOrderFromUser($username);
+        $data = ['orders' => $orders];
+        return view('cart', $data);
     }
     public function viewHistory(): string
     {
