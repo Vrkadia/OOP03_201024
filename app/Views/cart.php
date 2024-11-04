@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="login-section" style="width: 27%;">
-        <a href="BYD.php" class="back-left"><i class="fas fa-arrow-left"></i></a>
+        <a href="/rent" class="back-left"><i class="fas fa-arrow-left"></i></a>
         <p class="textBYD1">Keranjang Anda</p>
 
         <table>

@@ -49,7 +49,7 @@
 
             <br><br>
             <button id="schedule-here" type="submit" class="google-login">Next</button>
-            <a href="showdatabase.php" class="schedule-link">
+            <a href="/cart" class="schedule-link">
                 <button type="button" class="google-login">Tampilkan Keranjang</button>
             </a>
         </form>
