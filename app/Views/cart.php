@@ -35,18 +35,18 @@
                 </tr>
             </thead>
             <tbody>
-            <tr>
-            <?php foreach ($orders as $order): ?>
-                <td><?= esc($order['username']); ?></td>
-                <td><?= esc($order['alat']); ?></td>
-                <td><?= esc($order['rental_duration']); ?></td>
-                <td><?= esc($order['schedule_date_time']); ?></td>
-                <td><?= esc($order['payment_method']); ?></td> <!-- Displaying payment method -->
-                <td>
-                    <a href="delete.php?id=123" class="delete-link" onclick="return confirm('Apakah Anda yakin ingin menghapus pemesanan ini?');">Hapus</a>
-                </td>
-            <?php endforeach; ?>
-            </tr>
+                <?php foreach ($cart as $item): ?>
+                <tr>
+                    <td><?= esc($item['username']); ?></td>
+                    <td><?= esc($item['alat']); ?></td>
+                    <td><?= esc($item['rental_duration']); ?></td>
+                    <td><?= esc($item['schedule_date_time']); ?></td>
+                    <td><?= esc($item['payment_method']); ?></td> <!-- Displaying payment method -->
+                    <td>
+                        <a href="delete.php?id=123" class="delete-link" onclick="return confirm('Apakah Anda yakin ingin menghapus pemesanan ini?');">Hapus</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
 

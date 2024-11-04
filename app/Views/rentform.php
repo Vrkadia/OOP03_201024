@@ -15,13 +15,16 @@
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
         <?php endif; ?>
+        <?php if (session()->getFlashdata('success')): ?>
+            <div class="alert alert-danger"><?= session()->getFlashdata('success') ?></div>
+        <?php endif; ?>
 
         <form class="form" id="scheduleForm" action="<?= base_url('/rent') ?>" method="POST">
         <select class="optioncar" id="alat" name="i_alat" required>
             <option value="" disabled selected>Pilih alat Anda</option>
             <?php foreach ($items as $item): ?>
-                <option value="<?= htmlspecialchars($item['alat']) ?>">
-                    <?= htmlspecialchars($item['alat']) ?>
+                <option value="<?= htmlspecialchars($item['name']) ?>">
+                    <?= htmlspecialchars($item['name']) ?>
                 </option>
             <?php endforeach; ?>
         </select>
